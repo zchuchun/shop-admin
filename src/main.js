@@ -9,7 +9,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
 // 引入公共样式
-import '@/assets/base.css'
+import '@/assets/css/base.css'
 
 // 使用element-ul插件
 Vue.use(ElementUI)
