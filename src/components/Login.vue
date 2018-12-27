@@ -32,9 +32,13 @@ export default {
         ],
         password: [
           { required: true, message: '密码不能为空', trigger: 'change' },
-          { min: 6, max: 12, message: '长度在 6 到 12 个字符', trigger: 'change' }
+          {
+            min: 6,
+            max: 12,
+            message: '长度在 6 到 12 个字符',
+            trigger: 'change'
+          }
         ]
-
       }
     }
   },
@@ -46,7 +50,7 @@ export default {
           method: 'post',
           url: 'http://localhost:8888/api/private/v1/login',
           data: this.form
-        }).then((res) => {
+        }).then(res => {
           console.log(res)
           if (res.data.meta.status === 200) {
             this.$message({
@@ -67,39 +71,36 @@ export default {
     }
   }
 }
-
 </script>
 
 <style lang="less" scoped>
-.login{
+.login {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: #2D434C;
-  .el-form{
-    width:400px;
+  background-color: #2d434c;
+  .el-form {
+    width: 400px;
     background-color: #fff;
-    margin:200px auto;
+    margin: 200px auto;
     border-radius: 20px;
-    padding:75px 25px 15px;
+    padding: 75px 25px 15px;
     position: relative;
 
-   img {
-     position: absolute;
-     left:50%;
-     border:10px solid #fff;
-     transform:translateX(-50%);
-     top:-70px;;
-     width:120px;
-     height:120px;
-     border-radius:50%;
-
+    img {
+      position: absolute;
+      left: 50%;
+      border: 10px solid #fff;
+      transform: translateX(-50%);
+      top: -70px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
     }
 
-    .el-button:nth-child(2){
-      margin-left:100px;
+    .el-button:nth-child(2) {
+      margin-left: 100px;
     }
   }
-    }
-
+}
 </style>
